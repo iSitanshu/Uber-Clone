@@ -168,3 +168,66 @@ Authenticates an existing user by verifying the provided email and password. If 
   }
 }
 ```
+
+---
+
+## Users Profile Endpoint
+
+### Endpoint
+**GET** `/users/profile`
+
+### Description
+Returns the authenticated user's profile. This endpoint requires a valid token (typically provided in a cookie or Authorization header) to ensure that the user is authenticated.
+
+### Authentication
+- **Required:** Bearer token in the Authorization header or token cookie.
+
+### Responses
+
+#### Success - Profile Fetched
+- **Status Code:** 200 OK
+- **Response Body:**
+```json
+{
+  "_id": "unique_user_id",
+  "fullname": {
+    "firstname": "John",
+    "lastname": "Doe"
+  },
+  "email": "john.doe@example.com",
+  "socketId": null
+}
+```
+
+#### Error - Unauthorized
+- **Status Code:** 401 Unauthorized
+- **Response Body:**
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+---
+
+## Users Logout Endpoint
+
+### Endpoint
+**GET** `/users/logout`
+
+### Description
+Logs out the authenticated user by clearing the token cookie and adding the token to a blacklist. This ensures that the token can no longer be used for authentication.
+
+### Responses
+
+#### Success - User Logged Out
+- **Status Code:** 200 OK
+- **Response Body:**
+```json
+{
+  "message": "Logged out"
+}
+```
+
+#### Error - Token Missing or Invalid
+- **Status Code:** Depending on middleware, it may return 401 Unauthorized or another error message.
