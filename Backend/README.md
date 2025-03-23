@@ -231,3 +231,21 @@ Logs out the authenticated user by clearing the token cookie and adding the toke
 
 #### Error - Token Missing or Invalid
 - **Status Code:** Depending on middleware, it may return 401 Unauthorized or another error message.
+
+
+
+Register Captain - 
+{
+    "fullname": {
+        "firstname": "test_captain_firstname",
+        "lastname": "test_captain_lastname"
+    },
+    "email": "test_email@gmail.com",
+    "password": "test_captain",
+    "vehicle": {
+        "color": "red",
+        "plate": "MP 04 XY 6204",
+        "capacity": 3,
+        "vehicleType":"car"
+    }
+}
