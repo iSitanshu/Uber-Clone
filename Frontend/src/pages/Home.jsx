@@ -3,7 +3,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import axios from 'axios';
 import 'remixicon/fonts/remixicon.css'
-import LocationSearchPanel from '../components/LocationSearchPanel';
 import VehiclePanel from '../components/VehiclePanel';
 import ConfirmRide from '../components/ConfirmRide';
 import LookingForDriver from '../components/LookingForDriver';
@@ -13,6 +12,7 @@ import { useContext } from 'react';
 import { UserDataContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import LiveTracking from '../components/LiveTracking';
+import LocationSearchPanel from '../components/LocationSearchPanel';
 
 const Home = () => {
     const [ pickup, setPickup ] = useState('')
